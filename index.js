@@ -20,7 +20,7 @@ const monologueLines = [
 
 var totalBatteries = batteryBatches.reduce(function(counter){return (counter=counter+1)}, 0)
 
-var result = (monologueLines.map(e=>e.split(" ").length)).reduce(function(numbersObject, number) { 
+var wordCountMap = (monologueLines.map(e=>e.split(" ").length)).reduce(function(numbersObject, number) { 
   if (number in numbersObject) {
     numbersObject[number]++;
   }
@@ -29,4 +29,5 @@ var result = (monologueLines.map(e=>e.split(" ").length)).reduce(function(number
   }
   return numbersObject;
 }, {});
+
 
